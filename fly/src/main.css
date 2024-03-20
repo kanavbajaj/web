@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+:root {
+  --primaryColor: #3498db;
+  --secondarycolor:white;
+  --colorone:hsl(15,74%,70%);
+  --colortwo: hsl(26,100%,82%);
+  --HoverColor: hs1(225, 56%, 59%);
+  --whiteColor: hs1(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 12%);
+  --textColor: hsl(240, 1%, 48%);
+  --borderColor: hsl(8, 0%, 83%);
+  --whiteColorDeam: hs1(0, 0%, 93%);
+  --greyBg: hs1(0, 0%, 96%);
+  --greyText: rgb(145, 145, 145);
+  --inputColor: hs1(330, 12%, 97%);
+  --boxShadow: box-shadow: rgb( 0,0,0,0.1) 0px 10px 15px -3px rgba(0,0,0,0.05)
+  0px 4px 6px -2px;
+  --transition:.4s ease-in-out;
+}
+
+body {
+  background: rgb(66, 59, 185);
+  background: linear-gradient(90deg, rgb(66, 59, 185) 0%, rgba(78, 78, 221, 0.9837184874) 37%, rgb(0, 117, 255) 100%);
+}
+
+a {
+  text-decoration: none;
+  padding: 5px 5px 5px 5px;
+}
+
+a:hover {
+  background-color: rgb(221, 214, 214);
+}
+
+a:visited {
+  color: #3498db;
+}
+
+li {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.none {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  z-index: 1000;
+  width: 100%;
+  padding: 1rem;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  align-items: center;
+}
+
+.homeicons {
+  justify-content: space-between;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  padding: 10px 10px 5px 5px;
+  font-size: 35px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.homeicons img {
+  height: 50%;
+  transition: all 0.3s ease-in-out;
+  align-items: center;
+}
+
+.cihome {
+  padding-top: 10px;
+  color: #3498db;
+  font-size: 75px;
+}
+
+.tickets {
+  flex-direction: column;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+  width: 75%;
+}
+
+.from, .to {
+  border-width: 1px;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  align-items: left;
+  width: 300px;
+  height: 100px;
+  padding-top: 10px;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.fromplace {
+  background-color: rgb(254, 254, 254);
+  border-radius: 10px;
+  height: 50%;
+  color: black;
+  align-self: center;
+  align-items: center;
+  padding-left: 35px;
+  width: 0%;
+  height: 0%;
+}
+
+/* YourComponent.css */
+.scroll-container {
+  margin-bottom: 20px;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 150px;
+  /* Add other styling as needed */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.add {
+  border-radius: 7px;
+  padding-top: 10px;
+}
+
+.add p {
+  font-family: sans-serif;
+  text-align: left;
+  font-size: 16px;
+  color: white;
+  font-weight: bolder;
+}
+
+.con {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.con:hover {
+  transform: translateY(-10px) scale(1.2);
+}
+
+.upper {
+  width: 100%;
+  height: 35%;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.lower {
+  z-index: 9;
+  font-size: 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  font-weight: bolder;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.icon {
+  font-size: 1.3rem;
+  cursor: text;
+  align-self: center;
+  flex: 50%;
+}
+
+.primary {
+  animation: primary 3s linear infinite;
+}
+
+.secondary {
+  animation: secondary 3s linear infinite;
+}
+
+@keyframes primary {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes secondary {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
+
+.each-slide-effect span {
+  border-top: solid;
+  border-bottom: solid;
+  padding: 0px;
+  font-size: 50px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  font-weight: bolder;
+  color: white;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.just {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem;
+}
+
+.upper img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.btn {
+  pad: 0.7rem 1.5rem;
+  background: var(--primaryColor);
+  border: none;
+  outline: none;
+  color: var(--whiteColor);
+  cursor: pointer;
+  border-radius: 3rem;
+}
+.btn a {
+  color: var(--whiteColor);
+  font-weight: 500;
+}
+.btn:hover {
+  background: var(--HoverColor);
+}
+
+img, video {
+  height: auto;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+input {
+  font-size: 13px;
+  color: var(--greyText);
+  line-height: 22px;
+}
+
+h4 {
+  padding: 1rem 0;
+  font-weight: 700;
+  color: var(--blackColor);
+}
+
+h2 {
+  font-size: 25px;
+  padding: 1rem 0;
+  color: var(--blackColor);
+}/*# sourceMappingURL=main.css.map */
