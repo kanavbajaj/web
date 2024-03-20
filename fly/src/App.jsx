@@ -1,32 +1,27 @@
-import React from 'react'
-import Navbar from './Componenets/Navbar/navbar'
-import Search from './Componenets/Search/search'
-import Home from './Componenets/home/home'
-import Image from './Componenets/home/imgslider'
-import Support from './Componenets/Support/support'
-import Info from './Componenets/info/info'
-import Footer from './Componenets/Footer/footer'
-import Containerslider from './Componenets/home/containerslider'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Componenets/Navbar/navbar';
+import Home from './Componenets/home/home';
+import Submit from './Componenets/cnf/submit'; 
+import Image from './Componenets/home/imgslider';
+import Footer from './Componenets/Footer/footer';
+import Containerslider from './Componenets/home/containerslider';
 
 const App = () => {
   return (
-    <div>
-       
-    <Navbar/>
-  
-    <Image/>
-    <Home/><br></br>
-    <Containerslider/>
-    
-    
-    {/* <Home/>
-    <Search/>
-    <Support/>
-    <Info/>
-    <Footer/> */}
-    
+    <Router>
+      <div>
+        <Navbar />
+        <Image />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/submit" element={<Submit />} />
+        </Routes>
+        <Containerslider />
+        <Footer />
       </div>
-  )
-}
+    </Router>
+  );
+};
 
-export default App
+export default App;
