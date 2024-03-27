@@ -6,7 +6,7 @@ import Submit from './Componenets/cnf/submit';
 import Image from './Componenets/home/imgslider';
 import Footer from './Componenets/Footer/footer';
 import Containerslider from './Componenets/home/containerslider';
-
+import Confirm from'./Componenets/cnf/Confirm';
 const App = () => {
   return (
     <Router>
@@ -16,9 +16,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/submit" element={<Submit />} />
+          <Route path="/confirm" element={<Confirm />} />
         </Routes>
+        <br></br>
         <Containerslider />
-        <Footer />
+      <Footer/>
       </div>
     </Router>
   );

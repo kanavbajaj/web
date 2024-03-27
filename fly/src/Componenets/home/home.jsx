@@ -8,23 +8,32 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const [departureCity, setDepartureCity] = React.useState('1');
-  const [destination, setDestination] = React.useState('1');
-  const [travelDate, setTravelDate] = React.useState(null);
+  const [searchButtonDisabled, setSearchButtonDisabled] = React.useState(true);
 
-  const handleDepartureCityChange = (event) => {
-    setDepartureCity(event.target.value);
-  };
+const [departureCity, setDepartureCity] = React.useState('1');
+const [destination, setDestination] = React.useState('1');
+const [travelDate, setTravelDate] = React.useState(null);
+const handleDepartureCityChange = (event) => {
+  setDepartureCity(event.target.value);
+  setSearchButtonDisabled(departureCity === destination);
+};
 
-  const handleDestinationChange = (event) => {
-    setDestination(event.target.value);
-  };
+const handleDestinationChange = (event) => {
+  setDestination(event.target.value);
+  setSearchButtonDisabled(departureCity === event.target.value);
+};
 
-  const handleTravelDateChange = (date) => {
-    setTravelDate(date);
-  };
+const handleTravelDateChange = (date) => {
+  setTravelDate(date);
+  setSearchButtonDisabled(departureCity === destination);
+};
+const handleSearchClick = () => {
+  if (departureCity === destination) {
+    alert('Error: Departure and Destination cannot be the same.');
+    return;
+  }
 
-  const handleSearchClick = () => {
+  if (!searchButtonDisabled) {
     const flightDetails = {
       departureCity,
       destination,
@@ -32,7 +41,13 @@ const Home = () => {
     };
 
     localStorage.setItem('flightDetails', JSON.stringify(flightDetails));
-  };
+
+    // Redirect the person to the next page
+    // ...
+  }
+};
+
+  
 
   return (
     <div className='Home'>
@@ -54,27 +69,37 @@ const Home = () => {
       <div className='tickets'>
         <div className='from'>
           From
-          <br />
+          <br/>
           <select value={departureCity} onChange={handleDepartureCityChange}>
-            <option value="1">New York</option>
-            <option value="2">Los Angeles</option>
-            <option value="3">Chicago</option>
+            <option value="1">Italy</option>
+            <option value="2">Portugal</option>
+            <option value="3">Usa</option>
+            <option value="4">Brazil</option>
+            <option value="5">Australia</option>
+            <option value="6">India</option>
+            <option value="7">Mexico</option>
+            <option value="8">Chile</option>
+            <option value="9">Spain</option>
+            <option value="10">England</option>
           </select>
-          OR
-          <label htmlFor='op' />
-          <input type='text' />
+          
         </div>
         <div className='to'>
           To
           <br />
           <select value={destination} onChange={handleDestinationChange}>
-            <option value="1">New York</option>
-            <option value="2">Los Angeles</option>
-            <option value="3">Chicago</option>
+          <option value="1">Italy</option>
+            <option value="2">Portugal</option>
+            <option value="3">Usa</option>
+            <option value="4">Brazil</option>
+            <option value="5">Australia</option>
+            <option value="6">India</option>
+            <option value="7">Mexico</option>
+            <option value="8">Chile</option>
+            <option value="9">Spain</option>
+            <option value="10">England</option>
           </select>
-          OR
-          <label htmlFor='op' />
-          <input type='text' />
+          
         </div>
 
         <div className='date'>
@@ -86,7 +111,7 @@ const Home = () => {
         </div>
         <br />
         <Link to="/submit" style={{ textDecoration: 'none' }}>
-          <Button variant='contained' onClick={handleSearchClick}>
+          <Button variant='contained' disabled={searchButtonDisabled} onClick={handleSearchClick}>
             SEARCH
           </Button>
         </Link>
